@@ -29,6 +29,7 @@
     <properties>
         <java.version>21</java.version>
         <swagger.version>2.2.27</swagger.version>
+        <springdoc.openapi.ui.version>1.7.0</springdoc.openapi.ui.version>
         <liquibase.version>4.8.0</liquibase.version>
         <lombok.version>1.18.36</lombok.version>
         <org.mapstruct.version>1.6.3</org.mapstruct.version>
@@ -37,6 +38,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,9 +69,9 @@
             <version>${liquibase.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.swagger.core.v3</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>${swagger.version}</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.7.0</version>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
