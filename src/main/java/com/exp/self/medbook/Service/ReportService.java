@@ -4,18 +4,18 @@ import com.exp.self.medbook.DTO.ReportDTO;
 import com.exp.self.medbook.Entity.Report;
 import com.exp.self.medbook.Mapper.ReportMapper;
 import com.exp.self.medbook.Repository.ReportRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ReportService {
     private final ReportRepository reportRepository;
+    private final ReportMapper reportMapper;
 
-    public ReportService(ReportRepository reportRepository){
-        this. reportRepository = reportRepository;
-    }
-
-    public ReportDTO getReportById(Long id){
-        Report report = reportRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Report not found with id: " + id));
-        return ReportMapper.toDTO(report);
+    public ReportDTO getReportById(Long id) {
+        Report report = reportRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("Report not found with id: " + id));
+        return reportMapper.map(report);
     }
 }

@@ -24,6 +24,4 @@ public class RolePermission {
 
     @ManyToMany(mappedBy = "rolePermissions")
     private Set<User> users;
-
-
 }
