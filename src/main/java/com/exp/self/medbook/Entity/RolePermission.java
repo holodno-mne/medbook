@@ -19,10 +19,10 @@ public class RolePermission {
 
     private String permissionName;
 
-    @ManyToMany(mappedBy = "role_permission")
+    @ManyToMany(mappedBy = "rolePermissions")
     private Set<Role> roles;
 
-    @ManyToMany(mappedBy = "role_permission")
+    @ManyToMany(mappedBy = "rolePermissions")
     private Set<User> users;
 
 

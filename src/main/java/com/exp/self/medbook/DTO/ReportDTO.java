@@ -2,7 +2,6 @@ package com.exp.self.medbook.DTO;
 
 import lombok.*;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

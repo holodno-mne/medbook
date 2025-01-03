@@ -10,7 +10,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-@Data
 @Table(name = "users")
 public class User {
 
@@ -29,9 +28,9 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-            name = "user_permissions",
+            name = "user_role_permission",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "permission_id")
+            inverseJoinColumns = @JoinColumn(name = "role_permission_id")
     )
-    private Set<RolePermission> permissions;
+    private Set<RolePermission> rolePermissions;
 }

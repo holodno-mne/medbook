@@ -19,11 +19,11 @@ public class Role {
 
     @ManyToMany
     @JoinTable(
-            name = "role_permissions",
+            name = "role_permission",
             joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "permission_id")
     )
-    private Set<RolePermission> permissions;
+    private Set<RolePermission> rolePermissions;
 
     @OneToMany(mappedBy = "role")
     private Set<User> users;

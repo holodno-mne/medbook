@@ -12,7 +12,7 @@ public class UserMapper {
         userDTO.setNameDTO(user.getName());
         userDTO.setEmailDTO(user.getEmail());
         userDTO.setRoleNameDTO(user.getRole().getRoleName());
-        userDTO.setPermissionsDTO(user.getPermissions().stream().map(permission -> permission.getPermissionName()).collect(Collectors.toSet()));
+        userDTO.setPermissionsDTO(user.getRolePermissions().stream().map(permission -> permission.getPermissionName()).collect(Collectors.toSet()));
         return userDTO;
     }
 }
