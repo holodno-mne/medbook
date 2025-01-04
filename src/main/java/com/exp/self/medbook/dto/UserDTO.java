@@ -6,7 +6,6 @@ import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
 public class UserDTO {

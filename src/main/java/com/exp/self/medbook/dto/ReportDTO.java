@@ -2,13 +2,12 @@ package com.exp.self.medbook.dto;
 
 import lombok.*;
 
-
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-public record ReportDTO(
-        Long id,
-        String title,
-        String description) {
-
+public class ReportDTO {
+    private Long id;
+    private String title;
+    private String description;
 }
