@@ -4,23 +4,23 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <changeSet id="add-fk-application-account_id" author="holodno">
-        <preConditions onFail="MARK_RAN">
+    <changeSet id="add-fk-role_permission-role_id" author="holodno">
+        <preConditions onFail="HALT">
             <not>
-                <foreignKeyConstraintExists foreignKeyName="FK_APPLICATION_ACCOUNT_ID"/>
+                <foreignKeyConstraintExists foreignKeyName="FK_ROLE_PERMISSION_ROLE_ID"/>
             </not>
         </preConditions>
-        <addForeignKeyConstraint constraintName="FK_APPLICATION_ACCOUNT_ID"
-                                 baseTableName="APPLICATION"
-                                 baseColumnNames="ACCOUNT_ID"
-                                 referencedTableName="ACCOUNT"
+        <addForeignKeyConstraint constraintName="FK_ROLE_PERMISSION_ROLE_ID"
+                                 baseTableName="ROLE_PERMISSION"
+                                 baseColumnNames="ROLE_ID"
+                                 referencedTableName="ROLE"
                                  referencedColumnNames="ID"
                                  deferrable="false"
                                  initiallyDeferred="false"
-                                 onDelete="CASCADE"
+                                 onDelete="RESTRICT"
                                  onUpdate="RESTRICT"/>
         <rollback>
-            <dropForeignKeyConstraint baseTableName="APPLICATION" constraintName="FK_APPLICATION_ACCOUNT_ID"/>
+            <dropForeignKeyConstraint baseTableName="ROLE_PERMISSION" constraintName="FK_ROLE_PERMISSION_ROLE_ID"/>
         </rollback>
     </changeSet>
 

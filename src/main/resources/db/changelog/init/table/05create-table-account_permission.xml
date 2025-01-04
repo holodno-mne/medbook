@@ -4,14 +4,14 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <changeSet id="create-table-role_permissions" author="holodno">
-        <preConditions onFail="MARK_RAN">
+    <changeSet id="create-table-account_permission" author="author">
+        <preConditions onFail="HALT">
             <not>
-                <tableExists tableName="ROLE_PERMISSION"/>
+                <tableExists tableName="ACCOUNT_PERMISSION"/>
             </not>
         </preConditions>
-        <createTable tableName="ROLE_PERMISSION">
-            <column name="ROLE_ID" type="BIGINT">
+        <createTable tableName="ACCOUNT_PERMISSION">
+            <column name="ACCOUNT_ID" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
             <column name="PERMISSION_ID" type="BIGINT">
@@ -19,7 +19,7 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable tableName="ROLE_PERMISSION"/>
+            <dropTable tableName="ACCOUNT_PERMISSION"/>
         </rollback>
     </changeSet>
 

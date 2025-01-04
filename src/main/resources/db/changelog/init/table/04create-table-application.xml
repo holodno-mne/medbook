@@ -5,13 +5,13 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
     <changeSet id="create-table-application" author="author">
-        <preConditions onFail="MARK_RAN">
+        <preConditions onFail="HALT">
             <not>
                 <tableExists tableName="APPLICATION"/>
             </not>
         </preConditions>
         <createTable tableName="APPLICATION">
-            <column name="ID" type="BIGINT" autoIncrement="true">
+            <column name="ID" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="ACCOUNT_ID" type="BIGINT">

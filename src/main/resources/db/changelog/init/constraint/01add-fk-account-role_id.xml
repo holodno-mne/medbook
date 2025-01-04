@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
     <changeSet id="add-fk-account-role_id" author="holodno">
-        <preConditions onFail="MARK_RAN">
+        <preConditions onFail="HALT">
             <not>
                 <foreignKeyConstraintExists foreignKeyName="FK_ACCOUNT_ROLE_ID"/>
             </not>

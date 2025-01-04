@@ -1,7 +1,7 @@
 package com.exp.self.medbook.controller;
 
-import com.exp.self.medbook.dto.ReportDTO;
-import com.exp.self.medbook.service.ReportService;
+import com.exp.self.medbook.dto.ApplicationDTO;
+import com.exp.self.medbook.service.ApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/reports")
-public class ReportController {
+public class ApplicationController {
 
-    private final ReportService reportService;
+    private final ApplicationService applicationService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<ReportDTO> getReportById(@PathVariable Long id) {
-        ReportDTO reportDTO = reportService.getReportById(id);
-        return ResponseEntity.ok(reportDTO);
+    public ResponseEntity<ApplicationDTO> getApplicationById(@PathVariable Long id) {
+        ApplicationDTO applicationDTO = applicationService.getReportById(id);
+        return ResponseEntity.ok(applicationDTO);
     }
 }

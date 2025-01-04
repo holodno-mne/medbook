@@ -20,7 +20,7 @@ public class User {
     private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Report> reports;
+    private Set<Application> applications;
 
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)

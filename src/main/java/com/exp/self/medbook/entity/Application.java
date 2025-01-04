@@ -8,8 +8,8 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "report")
-public class Report {
+@Table(name = "application")
+public class Application {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

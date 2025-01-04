@@ -6,7 +6,7 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-public class ReportDTO {
+public class ApplicationDTO {
     private Long id;
     private String title;
     private String description;

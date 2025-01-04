@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
     <changeSet id="add-fk-account_permission-permission_id" author="holodno">
-        <preConditions onFail="MARK_RAN">
+        <preConditions onFail="HALT">
             <not>
                 <foreignKeyConstraintExists foreignKeyName="FK_ACCOUNT_PERMISSION_PERMISSION_ID"/>
             </not>
@@ -17,7 +17,7 @@
                                  referencedColumnNames="ID"
                                  deferrable="false"
                                  initiallyDeferred="false"
-                                 onDelete="CASCADE"
+                                 onDelete="RESTRICT"
                                  onUpdate="RESTRICT"/>
         <rollback>
             <dropForeignKeyConstraint baseTableName="ACCOUNT_PERMISSION" constraintName="FK_ACCOUNT_PERMISSION_PERMISSION_ID"/>

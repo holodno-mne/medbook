@@ -4,24 +4,23 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <changeSet id="create-table-permission" author="holodno">
-        <preConditions onFail="MARK_RAN">
+    <changeSet id="create-table-role" author="holodno">
+        <preConditions onFail="HALT">
             <not>
-                <tableExists tableName="PERMISSION"/>
+                <tableExists tableName="ROLE"/>
             </not>
         </preConditions>
-        <createTable tableName="PERMISSION">
+        <createTable tableName="ROLE">
             <column name="ID" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="SYSNAME" type="VARCHAR(50)">
+            <column name="SYSNAME" type="VARCHAR(255)">
                 <constraints unique="true" nullable="false"/>
             </column>
-            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="DESCRIPTION" type="VARCHAR(1000)"/>
         </createTable>
-        <addDefaultValue columnName="ID" defaultValueSequenceNext="PERMISSION_SEQ" tableName="PERMISSION"/>
         <rollback>
-            <dropTable tableName="PERMISSION"/>
+            <dropTable tableName="ROLE"/>
         </rollback>
     </changeSet>
 

@@ -4,15 +4,15 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <changeSet id="create-permission_seq" author="holodno">
-        <preConditions onFail="MARK_RAN">
+    <changeSet id="create-account_seq" author="holodno">
+        <preConditions onFail="HALT">
             <not>
-                <sequenceExists sequenceName="PERMISSION_SEQ"/>
+                <sequenceExists sequenceName="ACCOUNT_SEQ"/>
             </not>
         </preConditions>
-        <createSequence sequenceName="PERMISSION_SEQ" startValue="1"/>
+        <createSequence sequenceName="ACCOUNT_SEQ" startValue="1" minValue="1" maxValue="9223372036854775807" incrementBy="1" cacheSize="20"/>
         <rollback>
-            <dropSequence sequenceName="PERMISSION_SEQ"/>
+            <dropSequence sequenceName="ACCOUNT_SEQ"/>
         </rollback>
     </changeSet>
 

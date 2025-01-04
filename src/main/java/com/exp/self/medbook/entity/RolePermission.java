@@ -9,7 +9,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-@Table(name = "permissions")
+@Table(name = "permission")
 
 public class RolePermission {
 
