@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="add-fk-account_permission-account_id" author="holodno">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="FK_ACCOUNT_PERMISSION_ACCOUNT_ID"/>
+            </not>
+        </preConditions>
+        <addForeignKeyConstraint constraintName="FK_ACCOUNT_PERMISSION_ACCOUNT_ID"
+                                 baseTableName="ACCOUNT_PERMISSION"
+                                 baseColumnNames="ACCOUNT_ID"
+                                 referencedTableName="ACCOUNT"
+                                 referencedColumnNames="ID"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableName="ACCOUNT_PERMISSION" constraintName="FK_ACCOUNT_PERMISSION_ACCOUNT_ID"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
