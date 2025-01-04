@@ -1,4 +1,4 @@
-package com.exp.self.medbook.Entity;
+package com.exp.self.medbook.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

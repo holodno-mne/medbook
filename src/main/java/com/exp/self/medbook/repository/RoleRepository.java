@@ -1,6 +1,6 @@
-package com.exp.self.medbook.Repository;
+package com.exp.self.medbook.repository;
 
-import com.exp.self.medbook.Entity.Role;
+import com.exp.self.medbook.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {

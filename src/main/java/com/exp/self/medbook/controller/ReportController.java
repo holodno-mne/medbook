@@ -1,7 +1,8 @@
-package com.exp.self.medbook.Controller;
+package com.exp.self.medbook.controller;
 
-import com.exp.self.medbook.DTO.ReportDTO;
-import com.exp.self.medbook.Service.ReportService;
+import com.exp.self.medbook.dto.ReportDTO;
+import com.exp.self.medbook.service.ReportService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

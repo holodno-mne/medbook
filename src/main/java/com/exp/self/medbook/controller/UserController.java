@@ -1,7 +1,7 @@
-package com.exp.self.medbook.Controller;
+package com.exp.self.medbook.controller;
 
-import com.exp.self.medbook.DTO.UserDTO;
-import com.exp.self.medbook.Service.UserService;
+import com.exp.self.medbook.dto.UserDTO;
+import com.exp.self.medbook.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

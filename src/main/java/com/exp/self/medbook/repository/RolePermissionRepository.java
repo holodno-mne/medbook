@@ -1,6 +1,6 @@
-package com.exp.self.medbook.Repository;
+package com.exp.self.medbook.repository;
 
-import com.exp.self.medbook.Entity.RolePermission;
+import com.exp.self.medbook.entity.RolePermission;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RolePermissionRepository extends JpaRepository<RolePermission, Long> {

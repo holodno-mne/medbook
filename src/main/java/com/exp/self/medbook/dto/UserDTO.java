@@ -1,4 +1,4 @@
-package com.exp.self.medbook.DTO;
+package com.exp.self.medbook.dto;
 
 import lombok.*;
 

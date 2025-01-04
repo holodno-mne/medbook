@@ -1,6 +1,6 @@
-package com.exp.self.medbook.Repository;
+package com.exp.self.medbook.repository;
 
-import com.exp.self.medbook.Entity.User;
+import com.exp.self.medbook.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserReposutory extends JpaRepository<User, Long> {

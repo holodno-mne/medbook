@@ -1,9 +1,9 @@
-package com.exp.self.medbook.Service;
+package com.exp.self.medbook.service;
 
-import com.exp.self.medbook.DTO.ReportDTO;
-import com.exp.self.medbook.Entity.Report;
-import com.exp.self.medbook.Mapper.ReportMapper;
-import com.exp.self.medbook.Repository.ReportRepository;
+import com.exp.self.medbook.dto.ReportDTO;
+import com.exp.self.medbook.entity.Report;
+import com.exp.self.medbook.mapper.ReportMapper;
+import com.exp.self.medbook.repository.ReportRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,6 +16,6 @@ public class ReportService {
 
     public ReportDTO getReportById(Long id){
         Report report = reportRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Report not found with id: " + id));
-        return ReportMapper.toDTO(report);
+        return ReportMapper.toReportDTO(report);
     }
 }

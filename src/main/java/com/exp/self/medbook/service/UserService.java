@@ -1,9 +1,9 @@
-package com.exp.self.medbook.Service;
+package com.exp.self.medbook.service;
 
-import com.exp.self.medbook.DTO.UserDTO;
-import com.exp.self.medbook.Entity.User;
-import com.exp.self.medbook.Mapper.UserMapper;
-import com.exp.self.medbook.Repository.UserReposutory;
+import com.exp.self.medbook.dto.UserDTO;
+import com.exp.self.medbook.entity.User;
+import com.exp.self.medbook.mapper.UserMapper;
+import com.exp.self.medbook.repository.UserReposutory;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,7 +1,7 @@
-package com.exp.self.medbook.Mapper;
+package com.exp.self.medbook.mapper;
 
-import com.exp.self.medbook.DTO.UserDTO;
-import com.exp.self.medbook.Entity.User;
+import com.exp.self.medbook.dto.UserDTO;
+import com.exp.self.medbook.entity.User;
 
 import java.util.stream.Collectors;
 
