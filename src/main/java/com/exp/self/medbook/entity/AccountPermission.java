@@ -7,17 +7,19 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "ROLE_PERMISSION")
-public class RolePermission {
+@Table(name = "ACCOUNT_PERMISSION")
+public class AccountPermission {
 
     @EmbeddedId
-    private RolePermissionId id;
+    private AccountPermissionId id;
 
     @ManyToOne
-    @JoinColumn(name = "ROLE_ID", nullable = false)
-    private Role role;
+    @MapsId("accountID")
+    @JoinColumn(name = "ACCOUNT_ID", nullable = false)
+    private Account account;
 
     @ManyToOne
+    @MapsId("permissionID")
     @JoinColumn(name = "PERMISSION_ID", nullable = false)
     private Permission permission;
 }

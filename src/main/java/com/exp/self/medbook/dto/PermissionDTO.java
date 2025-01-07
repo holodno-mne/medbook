@@ -6,6 +6,6 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-public class RolePermissionDTO {
+public class PermissionDTO {
     private String permissionName;
 }
