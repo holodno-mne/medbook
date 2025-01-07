@@ -23,4 +23,7 @@ public class Permission {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @ManyToMany(mappedBy = "permissions")
+    private Set<Account> accounts;
+
 }

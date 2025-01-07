@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -15,7 +16,7 @@ import java.util.List;
 @Setter
 public class AccountDTO {
     private Long id;
-    private String createDate;
+    private OffsetDateTime createDate;
     private String fio;
     private String phone;
     private String email;

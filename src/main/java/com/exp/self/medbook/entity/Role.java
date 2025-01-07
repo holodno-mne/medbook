@@ -23,6 +23,7 @@ public class Role {
     @Column(name = "DESCRIPTION", length = 1000)
     private String description;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Account> accounts;
+    @OneToOne(mappedBy = "role")
+    private Account account;
+
 }

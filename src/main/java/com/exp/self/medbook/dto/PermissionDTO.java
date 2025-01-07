@@ -7,5 +7,5 @@ import lombok.*;
 @Getter
 @Setter
 public class PermissionDTO {
-    private String permissionName;
+    private String name;
 }

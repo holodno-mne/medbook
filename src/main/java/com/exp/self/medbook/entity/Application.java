@@ -14,8 +14,8 @@ import java.time.OffsetDateTime;
 public class Application {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "application_seq")
-    @SequenceGenerator(name = "application_seq", sequenceName = "APPLICATION_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "APPLICATION_SEQ")
+    @SequenceGenerator(name = "APPLICATION_SEQ", sequenceName = "APPLICATION_SEQ", allocationSize = 1)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

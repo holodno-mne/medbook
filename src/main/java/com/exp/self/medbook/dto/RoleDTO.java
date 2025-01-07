@@ -9,6 +9,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class RoleDTO {
-    private String roleName;
+    private String name;
     private Set<String> permissions;
 }

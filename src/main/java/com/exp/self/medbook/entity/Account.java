@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -14,12 +16,12 @@ import java.util.List;
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_seq")
-    @SequenceGenerator(name = "account_seq", sequenceName = "ACCOUNT_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_SEQ")
+    @SequenceGenerator(name = "ACCOUNT_SEQ", sequenceName = "ACCOUNT_SEQ", allocationSize = 1)
     private Long id;
 
     @Column(name = "UUID", nullable = false, unique = true)
-    private String uuid;
+    private UUID uuid;
 
     @Column(name = "CREATE_DATE", nullable = false)
     private OffsetDateTime createDate;
@@ -33,12 +35,15 @@ public class Account {
     @Column(name = "EMAIL", length = 255)
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ROLE_ID",
-            referencedColumnName = "ID",
-            nullable = false,
-            foreignKey = @ForeignKey(name = "FK_ACCOUNT_ROLE_ID"))
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID", nullable = false, foreignKey = @ForeignKey(name = "FK_ACCOUNT_ROLE_ID"))
     private Role role;
+
+    @ManyToMany
+    @JoinTable(name = "ACCOUNT_PERMISSION",
+            joinColumns = @JoinColumn(name = "ACCOUNT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "PERMISSION_ID"))
+    private Set<Permission> permissions;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Application> applications;
