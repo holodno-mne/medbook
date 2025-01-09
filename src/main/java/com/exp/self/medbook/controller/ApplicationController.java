@@ -14,26 +14,26 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/applications")
+@RequestMapping("/api/application")
 @Tag(name = "Новости", description = "Контроллер для работы с новостями")
 public class ApplicationController {
 
     private final ApplicationService applicationService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ApplicationDTO> getApplicationById(@PathVariable Long id) {
-        ApplicationDTO applicationDTO = applicationService.getReportById(id);
+    @GetMapping()
+    public ResponseEntity<ApplicationDTO> getApplicationById(@RequestParam Long id) {
+        ApplicationDTO applicationDTO = applicationService.getApplicationById(id);
         return ResponseEntity.ok(applicationDTO);
     }
 
-    @PostMapping
+    @PostMapping("/save")
     @Operation(summary = "Сохранение новой новости")
     public ResponseEntity<Application> createApplication(@RequestParam Long accountId){
         Application application = applicationService.createApplication(accountId);
         return ResponseEntity.status(HttpStatus.CREATED).body(application);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/get/list")
     public List<Application> getAllApplications(){
         return applicationService.getAllApplications();
     }

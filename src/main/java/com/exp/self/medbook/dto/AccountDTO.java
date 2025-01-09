@@ -20,6 +20,6 @@ public class AccountDTO {
     private String fio;
     private String phone;
     private String email;
-    private Role role;
+    private RoleDTO role;
     private List<Application> applicationList;
 }

@@ -3,13 +3,10 @@ package com.exp.self.medbook.controller;
 import com.exp.self.medbook.dto.AccountDTO;
 import com.exp.self.medbook.service.AccountService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/accounts")
+@RequestMapping("/api/account")
 public class AccountController {
 
     private final AccountService accountService;
@@ -18,9 +15,9 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<AccountDTO> getAccountById(@PathVariable Long id){
-        AccountDTO accountDTO = accountService.getAccountById(id);
+    @GetMapping("/get")
+    public ResponseEntity<AccountDTO> getAccount(@RequestParam Long id){
+        AccountDTO accountDTO = accountService.getAccountDTOById(id);
         return ResponseEntity.ok(accountDTO);
     }
 }

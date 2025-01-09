@@ -2,6 +2,7 @@ package com.exp.self.medbook.dto;
 
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -10,5 +11,5 @@ import java.util.Set;
 @Setter
 public class RoleDTO {
     private String name;
-    private Set<String> permissions;
+    private List<String> permissions;
 }

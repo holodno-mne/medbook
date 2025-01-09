@@ -19,7 +19,7 @@ public class ApplicationService {
     private final ApplicationMapper applicationMapper;
     private final AccountRepository accountRepository;
 
-    public ApplicationDTO getReportById(Long id) {
+    public ApplicationDTO getApplicationById(Long id) {
         Application application = applicationRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Application not found with id: " + id));
         return applicationMapper.toApplicationDTO(application);
     }

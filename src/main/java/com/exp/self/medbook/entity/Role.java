@@ -23,7 +23,7 @@ public class Role {
     @Column(name = "DESCRIPTION", length = 1000)
     private String description;
 
-    @OneToOne(mappedBy = "role")
-    private Account account;
+//    @OneToOne(mappedBy = "role")
+//    private Account account;
 
 }

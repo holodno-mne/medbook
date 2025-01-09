@@ -14,8 +14,9 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final AccountMapper accountMapper;
 
-    public AccountDTO getAccountById(Long id) {
+    public AccountDTO getAccountDTOById(Long id) {
         Account account = accountRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("User not found with id: " + id));
+        System.out.println("Role in Account: " + account.getRole());
         return accountMapper.toAccountDTO(account);
     }
 }
