@@ -10,6 +10,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class RoleDTO {
-    private String name;
-    private List<String> permissions;
+    private String sysname;
+    private String decription;
 }

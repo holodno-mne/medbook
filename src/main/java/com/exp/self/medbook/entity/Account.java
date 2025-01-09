@@ -35,7 +35,7 @@ public class Account {
     @Column(name = "EMAIL", length = 255)
     private String email;
 
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID", nullable = false, foreignKey = @ForeignKey(name = "FK_ACCOUNT_ROLE_ID"))
     private Role role;
 
